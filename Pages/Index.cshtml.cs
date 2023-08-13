@@ -21,15 +21,17 @@ public class IndexModel : PageModel
     }
 
     public string test {
-        // URLを取得
-        const url = new URL(window.location.href);
-    
-        // URLSearchParamsオブジェクトを取得
-        const params = url.searchParams;
-    
-        // パラメータから「username」を取得
-        const session_token = params.get("session_token");
-    
-        return session_token;
+        get {
+            // URLを取得
+            const url = new URL(window.location.href);
+        
+            // URLSearchParamsオブジェクトを取得
+            const params = url.searchParams;
+        
+            // パラメータから「username」を取得
+            const session_token = params.get("session_token");
+        
+            return session_token;
+        }
     }
 }
